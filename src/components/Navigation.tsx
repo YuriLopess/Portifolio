@@ -173,7 +173,7 @@ const Navigation: FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  © 2024 Yuri Lopes
+                  © 2025 Yuri Lopes
                 </motion.div>
               </div>
             </motion.div>

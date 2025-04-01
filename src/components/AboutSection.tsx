@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Code, Dumbbell, Music, Heart } from 'lucide-react';
+import img from '../assets/image/about_img.jpg'
 
 const AboutSection = () => {
   return (
@@ -21,7 +22,7 @@ const AboutSection = () => {
                 className="aspect-square rounded-[2rem] overflow-hidden bg-gray-100 max-w-md mx-auto"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1594882645126-14020914d58d"
+                  src={img}
                   alt="About Me"
                   className="w-full h-full object-cover grayscale"
                 />

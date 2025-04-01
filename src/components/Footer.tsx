@@ -128,7 +128,7 @@ const Footer: FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            © 2024 Yuri Lopes. All rights reserved.
+            © 2025 Yuri Lopes. All rights reserved.
           </motion.p>
         </motion.div>
       </div>
