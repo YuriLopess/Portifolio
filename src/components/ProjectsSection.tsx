@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, X, Lock } from 'lucide-react';
+import project1 from '../assets/image/project_01.png';
 
 interface Project {
   id: number;
@@ -16,30 +17,30 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "Modern portfolio built with React and Framer Motion",
-    longDescription: "A modern, animated portfolio website built using React, TypeScript, and Framer Motion. Features smooth animations, responsive design, and dynamic content loading.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
+    title: "Case Pan",
+    description: "User management API built with .NET 8 and PostgreSQL.",
+    longDescription: "A robust and scalable API developed in .NET 8, implementing CRUD operations for user management. It connects to a PostgreSQL database and follows a structured architecture with Controllers, Services, DTOs, and Validators. The project prioritizes clean code, maintainability, and best practices in API development.",
+    image: project1,
     githubUrl: "https://github.com/yourusername/portfolio",
-    tags: ["React", "TypeScript", "Framer Motion"]
+    tags: [".NET 8", "C#", "PostgreSQL", "Entity Framework"]
   },
   {
     id: 2,
-    title: "Task Manager",
-    description: "Full-stack task management application",
-    longDescription: "A comprehensive task management system with real-time updates, user authentication, and collaborative features. Built with modern web technologies.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=1000",
-    githubUrl: "https://github.com/yourusername/task-manager",
-    tags: ["Next.js", "Node.js", "MongoDB"]
+    title: "Coming Soon",
+    description: "Project under development",
+    longDescription: "",
+    githubUrl: "#",
+    tags: ["React"],
+    isLocked: true
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with advanced features",
-    longDescription: "A scalable e-commerce platform with features like product management, cart functionality, payment integration, and order tracking.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000",
-    githubUrl: "https://github.com/yourusername/ecommerce",
-    tags: ["React", "Node.js", "PostgreSQL"]
+    title: "Coming Soon",
+    description: "Project under development",
+    longDescription: "",
+    githubUrl: "#",
+    tags: ["React"],
+    isLocked: true
   },
   {
     id: 4,
