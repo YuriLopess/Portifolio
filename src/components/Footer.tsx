@@ -24,8 +24,8 @@ const Footer: FC = () => {
             <p className="text-[#323232] mb-4">Software Engineer</p>
             <div className="flex justify-center md:justify-start gap-4">
               {[
-                { Icon: Github, url: "https://github.com/yurilopesdev" },
-                { Icon: Linkedin, url: "https://linkedin.com/in/yurilopesdev" },
+                { Icon: Github, url: "https://github.com/YuriLopess" },
+                { Icon: Linkedin, url: "https://www.linkedin.com/in/yuri-lopes2006/" },
               ].map(({ Icon, url }, index) => (
                 <motion.a
                   key={index}
@@ -128,7 +128,7 @@ const Footer: FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            © 2025 Yuri Lopes. All rights reserved.
+            © 2024 Yuri Lopes. All rights reserved.
           </motion.p>
         </motion.div>
       </div>

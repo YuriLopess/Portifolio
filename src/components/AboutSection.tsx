@@ -4,7 +4,7 @@ import img from '../assets/image/about_img.jpg'
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">

@@ -31,12 +31,13 @@ const qualificationData: Record<string, QualificationDetails[]> = {
       organization: "Banco Pan",
       period: "2024 - Present",
       description: [
-        "Working with Java and Spring Boot development",
-        "Contributing to backend services and API development",
-        "Learning about financial technology systems",
-        "Collaborating with senior developers on production code"
+        "Automating processes using Python, Selenium, Pandas and OS",
+        "Creating and monitoring daily DAGs with Apache Airflow",
+        "Building SQL queries and views in Amazon Athena",
+        "Developing internal tools with Streamlit for data analysis",
+        "Working with AWS services such as S3 and SageMaker"
       ],
-      technologies: ["Java", "Spring Boot", "Git", "SQL", "Microservices"]
+      technologies: ["Python", "Airflow", "SQL", "Athena", "S3", "SageMaker", "Streamlit", "Pandas", "Selenium", "AWS"]
     }
   ]
 };

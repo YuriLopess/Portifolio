@@ -7,7 +7,71 @@ const Navigation: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('home');
 
-  const menuItems = ['Home', 'About', 'Qualification', 'Experience', 'Projects', 'Contact'];
+  const menuItems = ['Home', 'About', 'Qualification', 'Skills', 'Projects', 'Contact'];
+
+  const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    
+    // Special handling for Home section
+    if (sectionId === 'home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
+
+    // Map section IDs to their actual element IDs
+    const sectionMap: Record<string, string> = {
+      about: 'about',
+      qualification: 'qualification',
+      skills: 'skills',
+      projects: 'projects',
+      contact: 'contact'
+    };
+
+    const elementId = sectionMap[sectionId];
+    const element = document.getElementById(elementId);
+    
+    if (element) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Handle scroll events to update header appearance
+  useState(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll position
+      const sections = ['about', 'qualification', 'skills', 'projects', 'contact'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveItem(section);
+            return;
+          }
+        }
+      }
+      
+      // If we're at the top, set Home as active
+      if (window.scrollY < 100) {
+        setActiveItem('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 
   return (
     <>
@@ -29,8 +93,8 @@ const Navigation: FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.a 
-                href="#"
+              <motion.button 
+                onClick={() => scrollToSection('home')}
                 className="relative text-2xl font-bold text-[#212121]"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -42,7 +106,7 @@ const Navigation: FC = () => {
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.2 }}
                 />
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -50,7 +114,10 @@ const Navigation: FC = () => {
               {menuItems.map((item, index) => (
                 <motion.button
                   key={item}
-                  onClick={() => setActiveItem(item.toLowerCase())}
+                  onClick={() => {
+                    setActiveItem(item.toLowerCase());
+                    scrollToSection(item.toLowerCase());
+                  }}
                   className="relative text-sm"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -137,7 +204,7 @@ const Navigation: FC = () => {
                       <motion.button
                         onClick={() => {
                           setActiveItem(item.toLowerCase());
-                          setIsMobileMenuOpen(false);
+                          scrollToSection(item.toLowerCase());
                         }}
                         className={`relative w-full group p-4 text-left transition-all overflow-hidden ${
                           activeItem === item.toLowerCase()
@@ -173,7 +240,7 @@ const Navigation: FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  © 2025 Yuri Lopes
+                  © 2024 Yuri Lopes
                 </motion.div>
               </div>
             </motion.div>
